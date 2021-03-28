@@ -1,5 +1,6 @@
 const defaultState = {
-    rates: {}
+    rates: {},
+    convertRate: 0
 }
 
 const rateReducer = (state = defaultState, action) => {
@@ -7,6 +8,10 @@ const rateReducer = (state = defaultState, action) => {
         case "GET_EXCHANGE_RATE":
             return {
                 rates: {...action.payload}
+            }
+        case "CONVERT_EXCHANGE_RATE":
+            return {
+                convertRate: action.payload
             }
         default: return state
     }

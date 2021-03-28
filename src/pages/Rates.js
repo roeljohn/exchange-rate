@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { getRates } from '../actions/actionRate';
 import RateList from '../components/RateList';
 
-class QRProfile extends React.Component {
+class Rates extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(QRProfile);
+  export default connect(mapStateToProps, mapDispatchToProps)(Rates);

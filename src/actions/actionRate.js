@@ -1,11 +1,10 @@
 import axios from "axios";
-import { getExchangeRate } from "./action";
+import { convertExchangeRate, getExchangeRate } from "./action";
 import { GET_EXCHANGE_RATE } from "./actionType";
 
 export function getRates() {
     return dispatch => {
     //dispatch(fetchDataRequest());
-    dispatch({ type: GET_EXCHANGE_RATE });
     axios
       .get(
         "https://api.exchangeratesapi.io/latest"
@@ -16,5 +15,13 @@ export function getRates() {
       .catch(error => {
         //dispatch(fetchDataError(error));
       });
+  };
+}
+
+export function getConvertRates(first_rate, second_rate) {
+  return dispatch => {
+    const result = first_rate * second_rate;
+    console.log(result);
+    dispatch(convertExchangeRate(result));
   };
 }
