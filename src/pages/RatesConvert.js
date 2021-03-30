@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import { convertExchangeRate } from '../actions/action';
 import { getConvertRates, getRates } from '../actions/actionRate';
+import RateList from '../components/RateList';
 import RatesConvertForm from '../components/RatesConvertForm';
 
 
@@ -13,7 +14,6 @@ class RatesConvert extends React.Component {
         };
     }
     componentDidMount(){
-        this.props.convertExchangeRate();
         this.props.getRates();
     }
     render() {
@@ -24,6 +24,7 @@ class RatesConvert extends React.Component {
                     <Col sm>sm=true</Col>
                     <Col sm>
                         <RatesConvertForm />
+                        <RateList />
                     </Col>
                     <Col sm>sm=true</Col>
                     
@@ -43,7 +44,6 @@ const mapStateToProps = (state) => {
   
 const mapDispatchToProps = (dispatch) => {
     return {
-        convertExchangeRate: () => dispatch(getConvertRates(4, 2)),
         getRates: () => dispatch(getRates()),
     }
 }

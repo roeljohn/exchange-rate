@@ -1,5 +1,5 @@
 import axios from "axios";
-import { convertExchangeRate, getExchangeRate } from "./action";
+import { convertFinalExchangeRate, convertExchangeRate, getExchangeRate } from "./action";
 import { GET_EXCHANGE_RATE } from "./actionType";
 
 export function getRates() {
@@ -18,10 +18,17 @@ export function getRates() {
   };
 }
 
-export function getConvertRates(first_rate, second_rate) {
+export function getConvertRates(fist_rate, second_rate) {
   return dispatch => {
-    const result = first_rate * second_rate;
-    console.log(result);
+    const result = second_rate / fist_rate;
     dispatch(convertExchangeRate(result));
   };
 }
+
+export function getFinalConvertRates(amount, second_rate) {
+  return dispatch => {
+    const result = amount * second_rate;
+    dispatch(convertFinalExchangeRate(result));
+  };
+}
+
