@@ -1,7 +1,7 @@
 const defaultState = {
     rates: {},
     convertRate: {},
-    convertRates: {}
+    convertFinalRates: ''
 }
 
 const rateReducer = (state = defaultState, action) => {

@@ -10,7 +10,6 @@ class Rates extends React.Component {
         };
     }
     componentDidMount(){
-        this.props.getRates();
     }
     render() {
         return (
@@ -23,13 +22,11 @@ class Rates extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-      rates: state.rateReducer.rates
     }
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-        getRates: () => dispatch(getRates()),
     }
   }
   

@@ -7,7 +7,7 @@ const history = createBrowserHistory();
 
 function App() {
   return (
-    <div className="App">
+    <div className="App p-5">
       <Router history={history}>
             <Switch>
               <Route path="/" render={props => <RatesConvert {...props} />} />

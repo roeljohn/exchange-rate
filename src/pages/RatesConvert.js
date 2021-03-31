@@ -21,12 +21,12 @@ class RatesConvert extends React.Component {
             <div>
                 <Container>
                 <Row>
-                    <Col sm>sm=true</Col>
+                    <Col sm></Col>
                     <Col sm>
                         <RatesConvertForm />
                         <RateList />
                     </Col>
-                    <Col sm>sm=true</Col>
+                    <Col sm></Col>
                     
                 </Row>
                 </Container>

@@ -4,12 +4,11 @@ import { connect } from "react-redux";
 
 
 const RateList = ({ rates }) => {
-    const ratesArray = Object.entries(rates).map(([key,value])=>{
+    const ratesArray = rates && Object.entries(rates).map(([key,value])=>{
         return {currency: key, value: value };
     });
     return (
         <div className="text-center">
-        {console.log('ratesArray', ratesArray)}
         <List
             size="small"
             header={<div>Latest Currency</div>}
@@ -25,5 +24,5 @@ const mapStateToProps = (state) => {
     return {
         rates: state.rateReducer.rates
     }
-  }
+}
 export default connect(mapStateToProps)(RateList);
